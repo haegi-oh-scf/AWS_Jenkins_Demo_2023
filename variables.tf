@@ -3,6 +3,7 @@ variable "aws_region" {
        default     = "us-east-1" 
 }
 
+
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
     default     =  "mySep22Key" 
