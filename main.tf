@@ -50,7 +50,10 @@ resource "aws_instance" "myFirstInstance" {
   tags= {
     Name = var.tag_name
   }
-  ebs_block_device {
+  root_block_device {
+    volume_size = "50"
+    volume_type = "gp2"
+    delete_on_termination = true
     encrypted = true
   }
 }
