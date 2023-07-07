@@ -50,6 +50,9 @@ resource "aws_instance" "myFirstInstance" {
   tags= {
     Name = var.tag_name
   }
+  ebs_block_device {
+    encrypted = true
+  }
 }
 
 # Create Elastic IP address
