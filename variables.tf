@@ -25,7 +25,7 @@ variable "tag_name" {
 } 
 variable "ami_id" { 
     description = "AMI for Ubuntu Ec2 instance" 
-    default     = "ami-0ee23bfc74a881de5" 
+    default     = "ami-069d73f3235b535bd"
 }
 variable "versioning" {
     type        = bool
@@ -40,7 +40,7 @@ variable "acl" {
 variable "bucket_prefix" {
     type        = string
     description = "(required since we are not using 'bucket') Creates a unique bucket name beginning with the specified prefix"
-    default     = "my-s3bucket-Jenkins-demo"
+    default     = "my-s3bucket-jenkins-demo"
 }
 variable "tags" {
     type        = map
