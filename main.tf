@@ -10,7 +10,6 @@ resource "aws_vpc" "main" {
   }
 }
 
-/*
 resource "aws_iam_role" "lambda_role" {
 name   = "Spacelift_Test_Lambda_Function_Role"
 assume_role_policy = <<EOF
@@ -72,4 +71,4 @@ type        = "zip"
 source_dir  = "${path.module}/python/"
 output_path = "${path.module}/python/hello-python.zip"
 }
-*/
+
