@@ -8,6 +8,7 @@ pipeline {
 
         //   }
         // }
+        //test commiting changes
         
         stage ("terraform init") {
             steps {
