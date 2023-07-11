@@ -18,7 +18,6 @@ assume_role_policy = <<EOF
  "Statement": [
    {
      "Action": [
-               [
                 "iam:CreateRole",
                 "iam:PutRolePolicy",
                 "lambda:CreateFunction",
@@ -31,7 +30,10 @@ assume_role_policy = <<EOF
                 "lambda:AddPermission",
                 "lambda:UpdateFunctionCode"
             ],
-           
+    "Resource": [
+                    "*"
+                ]
+               
      "Principal": {
        "Service": "lambda.amazonaws.com"
      },
