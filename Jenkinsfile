@@ -4,9 +4,10 @@ pipeline {
                 stage('Example') {
                     steps {
                         echo 'Hello World'
+                        echo 'Test'
 
                     script {
-                            def browsers = ['chrome', 'firefox']
+                            def browsers = ['chrome']
                             for (int i = 0; i < browsers.size(); ++i) {
                                 echo "Testing the ${browsers[i]} browser"
                             }
