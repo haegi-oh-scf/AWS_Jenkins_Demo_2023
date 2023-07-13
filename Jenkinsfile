@@ -5,38 +5,22 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr:'10'))
     }
 
-    stages {
-        stage ('Install') {
-            steps {
-                // install required gems
-                sh 'bundle install'
+    pipeline {
+    agent any
+            stages {
+                stage('Example') {
+                    steps {
+                        echo 'Hello World'
+
+                    script {
+                            def browsers = ['chrome', 'firefox']
+                            for (int i = 0; i < browsers.size(); ++i) {
+                                echo "Testing the ${browsers[i]} browser"
+                            }
+                        }
+                    }
+                }
             }
-        }
-        stage ('Build') {
-            steps {
-                // Build
-                sh 'bundle exec rake build'
-
-                // Archive the built artifacts
-                archive includes: 'pkg/*.gem'
-            }  
-        }
-        stage ('Test') {
-        steps {
-            // run tests with coverage
-            sh 'bundle exec rake spec'
-
-            // publish html
-            publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: 'coverage',
-                reportFiles: 'index.html',
-                reportName: 'RCov Report'
-              ]
-             }
-           }
         }
         
         // stage('Checkout') {
