@@ -1,12 +1,5 @@
 pipeline {
     agent any
-    options {
-        // Keep the 10 most recent build
-        buildDiscarder(logRotator(numToKeepStr:'10'))
-    }
-
-    pipeline {
-    agent any
             stages {
                 stage('Example') {
                     steps {
